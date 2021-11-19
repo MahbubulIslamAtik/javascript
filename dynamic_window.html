@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      function popWindow(fun){
+        let name=fun.txtName.value;
+        let email=fun.txtEmail.value;
+        let city=fun.cmbCity.value;
+        let address=fun.txtAddress.value;
+       
+
+        let gender =" ";
+        let subjects ="";
+
+        for(rdo of fun.rdoGender){
+          if(rdo.checked){
+            gender=rdo.value;
+          }
+        }
+        for(chk of fun.chkSubject){
+          if(chk.checked){
+            subjects += chk.value+", ";
+          }
+        }
+
+        let wOpen=open('','', "width=300px, height=400px");
+          wOpen.document.write("Name: "+name+"<br/>");
+          wOpen.document.write("Email: "+email+"<br/>");
+          wOpen.document.write("City: "+city+"<br/>");
+          wOpen.document.write("Gender: "+gender+"<br/>");
+          wOpen.document.write("Subject: "+subjects+"<br/>");
+          wOpen.document.write("Address: "+ address);
+      }
+  </script>
+</head>
+<body>
+  <form action="" name="fun">
+	<fieldset>
+		<legend>Student Information</legend>
+    <div>Name<br>
+      <input type="text" name="txtName" id="">
+    </div>
+    <div>Email<br>
+      <input type="text" name="txtEmail" id="">
+    </div>
+    <div>City <br>
+      <select name="cmbCity">
+        <option>Dhaka</option>
+        <option>Rajshahi</option>
+        <option>Rangpur</option>
+        <option>Bogra</option>
+      </select>
+    </div>
+    <div>Gender<br>
+      <input type="radio" name="rdoGender" id="" value="Male">
+      <input type="radio" name="rdoGender" id="" value="Female">
+    </div>
+    <div>Subject<br>
+      <input type="checkbox" name="chkSubject" id="" value="CSS">CSS
+      <input type="checkbox" name="chkSubject" id="" value="HTML">HTML
+      <input type="checkbox" name="chkSubject" id="" value="JavaScript">JavaScript
+      <input type="checkbox" name="chkSubject" id="" value="PHP">PHP
+    </div>
+    <div>Textarea<br>
+    <textarea name="txtAddress" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+      <input type="submit" onclick="popWindow(fun)" value="Submit">
+    </div>
+
+	</fieldset>
+  </form>
+</body>
+</html>
+
+

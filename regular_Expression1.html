@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Phone: <input type="text" name="" id="txtData"><span id="msg"></span>
+  <button onclick="checkPhone()">Check Data</button>
+
+  <script>
+    function checkPhone(){
+
+      let phone=document.getElementById("txtData").value;
+      let rex=/^[0-9a-zA-Z]{10,}$/
+
+      let ok=rex.test(phone);
+
+      if(ok==true){
+        document.getElementById("msg").innerHTML="OK";
+      }else{
+        document.getElementById("msg").innerHTML="Error";
+      }
+    }
+  </script>
+</body>
+</html>

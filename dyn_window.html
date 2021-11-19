@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function processForm(f){
+           let name=f.txtName.value;//document.f.txtName.value;
+           let email=f.txtEmail.value;
+           let city=f.cmbCity.value;
+           let address=f.txtAddress.value;
+
+           let gender="";
+           let subjects="";
+
+           for(rdo of f.rdoGender){
+                if(rdo.checked){
+                    gender=rdo.value;
+                }
+           }
+
+           for(chk of f.chkSubject){
+               if(chk.checked){
+                  subjects+=chk.value+",";
+                }
+            }
+
+        let w=open('','',"width=300,height=400");
+           w.document.write("Name: "+name+"<br>");
+           w.document.write("Email: "+email+"<br>");
+           w.document.write("City: "+city+"<br>");
+           w.document.write("Gender:"+gender+"<br>");
+           w.document.write("Subject:"+subjects+"<br>");
+           w.document.write("Address:"+address);      
+
+        }//end function
+    </script>
+</head>
+<body>
+    <form name="f">
+       <div>Name<br>
+          <input type="text" name="txtName" />           
+       </div>
+       <div>Email<br>
+        <input type="text" name="txtEmail" />           
+       </div>
+       <div>City<br>
+          <select name="cmbCity"> 
+            <option>Dhaka</option>
+            <option>Rangpur</option>
+            <option>Narshindhi</option>            
+          </select>          
+       </div>
+       <div>
+           Gender<br>
+           <input type="radio" name="rdoGender" value="Male">M
+           <input type="radio" name="rdoGender" value="Female">F
+       </div>
+       <div>Subject<br>
+            <input type="checkbox" name="chkSubject" value="CSS">CSS
+            <input type="checkbox" name="chkSubject" value="HTML">HTML
+            <input type="checkbox" name="chkSubject" value="JavaScript">JavaScript
+            <input type="checkbox" name="chkSubject" value="PHP">PHP
+       </div>
+       <div>
+           Address<br>
+           <textarea name="txtAddress"></textarea>
+       </div>
+       <div>
+           <input type="button" onclick="processForm(f)" value="Submit" />
+       </div>  
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: aqua;
+    }
+  </style>
+  <script>
+    i=0;
+    function start(){
+      let r=100;
+      let x=200+r*Math.sin(i);
+      let y=100+r*Math.cos(i);
+
+      let ball=document.getElementById("ball");
+
+      ball.style.cssText="background-color:blue;position:absolute;border-radius:50%;width:150px;height:150px;left:"+x+"px;top:"+y+"px";
+
+      let bal1=document.getElementById("ball1");
+      ball1.style.cssText="background-color:green;position:absolute;border-radius:50%; width:120px;height:120px;left:"+(x + 50)+"px;top:"+(y + 20)+"px;";
+
+      let bal2=document.getElementById("ball2");
+      ball2.style.cssText="background-color:pink;position:absolute;border-radius:50%; width:100px;height:100px;left:"+(x + 20)+"px;top:"+(y)+"px;";
+
+      setTimeout("start()",1);
+
+      i+=0.01;
+    }
+  </script>
+</head>
+<body onload="start()">
+  <div id="ball">
+  <div id="ball1">
+  <div id="ball2">
+
+  </div>
+</body>
+</html>
